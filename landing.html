@@ -61,9 +61,113 @@
       border: none;
       border-radius: 5px;
     }
-  </style>
+  
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      display: none;
+    }
+    .menu-overlay.active {
+      display: block;
+    }
+    </style>
+<style>
+    .menu-icon {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .menu-icon div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #005B96;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      padding-top: 60px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    nav.active {
+      transform: translateX(0);
+    }
+    nav a {
+      display: block;
+      margin: 15px 0;
+      color: white;
+      text-decoration: none;
+    }
+    @media screen and (max-width: 768px) {
+      .menu-icon { display: block; }
+    }
+    
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      display: none;
+    }
+    .menu-overlay.active {
+      display: block;
+    }
+    </style>
+<script>
+function toggleMenu() {
+  document.getElementById("overlay").classList.toggle("active");
+  document.getElementById("mainNav").classList.toggle("active");
+}
+</script>
 </head>
 <body>
+<div class="menu-icon" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+<nav id="mainNav">
+  <a href="#slider" onclick="toggleMenu()">Inicio</a>
+  <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+  <a href="#portafolio" onclick="toggleMenu()">Proyectos</a>
+  <a href="#tecnologias" onclick="toggleMenu()">Tecnologías</a>
+  <a href="#clientes" onclick="toggleMenu()">Clientes</a>
+  <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+</nav>
+<div class="menu-icon" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<nav id="mainNav">
+  <a href="#slider">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#portafolio">Proyectos</a>
+  <a href="#tecnologias">Tecnologías</a>
+  <a href="#clientes">Clientes</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
 <div class="hero">
   <img src="img/logo_geoit.png" alt="Logo GEOIT" width="100">
