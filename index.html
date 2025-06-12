@@ -32,18 +32,31 @@
         transform: translateY(0);
       }
     }
-    h1 {
-      font-size: 3em;
+    h1, h2 {
+      font-size: 2.5em;
       margin-top: 20px;
       animation: fadeUp 2s ease-out 1s forwards;
       opacity: 0;
     }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
+    p, ul {
+      font-size: 1.1em;
+      max-width: 800px;
       margin: 20px auto;
       opacity: 0;
       animation: fadeUp 2s ease-out 2s forwards;
+    }
+    .section {
+      padding: 40px 20px;
+      background-color: rgba(0,0,0,0.2);
+      margin: 40px 0;
+      border-radius: 12px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✔️ ";
     }
   </style>
 </head>
@@ -51,5 +64,32 @@
   <img src="logo_geoit_systems.svg" class="logo" alt="GEOIT Logo" width="150">
   <h1>GEOIT Systems</h1>
   <p>Innovación, tecnología y soluciones inteligentes para un mundo conectado.</p>
+
+  <div class="section">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Desarrollo de sistemas a medida (web, escritorio, móvil)</li>
+      <li>Soluciones en Sistemas de Información Geográfica (SIG)</li>
+      <li>Consultoría en infraestructura informática</li>
+      <li>Instalación y mantenimiento de redes</li>
+      <li>Venta de equipos y software</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Portafolio</h2>
+    <ul>
+      <li>Plataforma de pagos QR para cooperativas</li>
+      <li>Aplicación SIG para catastro digital</li>
+      <li>Sistema ERP para empresas agroindustriales</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Contacto</h2>
+    <p>Correo: ubaldo@geoitsystems.com<br>
+    Teléfono: +591 70012345<br>
+    Dirección: Santa Cruz - Bolivia</p>
+  </div>
 </body>
 </html>
