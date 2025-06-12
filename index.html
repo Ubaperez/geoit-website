@@ -58,6 +58,38 @@
     ul li::before {
       content: "✔️ ";
     }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px;
+      font-size: 1em;
+      background-color: #ffffff;
+      color: #005B96;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: rgba(0,0,0,0.3);
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    .social-icons img {
+      width: 32px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -86,10 +118,34 @@
   </div>
 
   <div class="section">
-    <h2>Contacto</h2>
-    <p>Correo: ubaldo@geoitsystems.com<br>
-    Teléfono: +591 70012345<br>
-    Dirección: Santa Cruz - Bolivia</p>
+    <h2>Clientes</h2>
+    <p>COOSIV RL, Colonia Piraí, Facultad de Ciencias de la Computación - UAGRM</p>
   </div>
+
+  <div class="section">
+    <h2>Testimonios</h2>
+    <p>"Gracias a GEOIT mejoramos nuestra gestión catastral con precisión y eficiencia" – COOSIV RL</p>
+    <p>"Su sistema ERP nos ayudó a integrar la producción y ventas en tiempo real" – Colonia Piraí</p>
+  </div>
+
+  <div class="section">
+    <h2>Contacto</h2>
+    <form action="https://formsubmit.co/ubaperez@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GEOIT Systems | Santa Cruz - Bolivia</p>
+    <div class="social-icons">
+      <a href="https://facebook.com/geoitsystems" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+      <a href="https://linkedin.com/company/geoitsystems" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png"></a>
+      <a href="https://wa.me/59170012345" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
+    </div>
+  </footer>
 </body>
 </html>
