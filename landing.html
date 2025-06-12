@@ -6,145 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; }
     .hero {
       background: linear-gradient(to right, #005B96, #4CAF50);
       color: white;
       padding: 80px 20px;
       text-align: center;
     }
-    .hero h1 {
-      font-size: 2.8em;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2em;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
+    .hero h1 { font-size: 2.8em; margin-bottom: 20px; }
+    .hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto 30px; }
     .cta-btn {
-      background: white;
-      color: #005B96;
-      padding: 15px 25px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
+      background: white; color: #005B96; padding: 15px 25px; font-weight: bold;
+      border-radius: 8px; text-decoration: none;
     }
     .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
     }
     .section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-    }
-    .footer {
-      background: #005B96;
-      color: white;
-      text-align: center;
-      padding: 15px;
+      max-width: 1000px; margin: 40px auto; padding: 20px;
+      background: white; border-radius: 8px;
     }
     form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      width: 100%; padding: 10px; margin-bottom: 10px;
+      border-radius: 5px; border: 1px solid #ccc;
     }
     form button {
-      background: #005B96;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
+      background: #005B96; color: white; padding: 10px 20px;
+      border: none; border-radius: 5px;
     }
-  
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 999;
-      display: none;
+    .footer {
+      background: #005B96; color: white; text-align: center; padding: 15px;
     }
-    .menu-overlay.active {
-      display: block;
-    }
-    </style>
-<style>
+
+    /* Hamburguesa */
     .menu-icon {
-      display: none;
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      cursor: pointer;
-      z-index: 1001;
+      position: fixed; top: 15px; right: 20px; z-index: 1001;
+      display: none; flex-direction: column; cursor: pointer;
     }
     .menu-icon div {
-      width: 30px;
-      height: 4px;
-      background-color: white;
-      margin: 6px 0;
+      width: 30px; height: 4px; background: white; margin: 5px 0;
     }
+
     nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #005B96;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 100%;
-      padding-top: 60px;
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
-      z-index: 1000;
+      position: fixed; top: 0; right: 0;
+      width: 200px; height: 100%;
+      background: #005B96; display: flex;
+      flex-direction: column; align-items: center;
+      justify-content: center; transform: translateX(100%);
+      transition: transform 0.3s ease; z-index: 1000;
     }
-    nav.active {
-      transform: translateX(0);
-    }
+    nav.active { transform: translateX(0); }
+
     nav a {
-      display: block;
-      margin: 15px 0;
-      color: white;
-      text-decoration: none;
+      color: white; margin: 15px 0; text-decoration: none;
+      font-size: 18px;
     }
-    @media screen and (max-width: 768px) {
-      .menu-icon { display: block; }
-    }
-    
+
     .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 999;
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); z-index: 999;
       display: none;
     }
-    .menu-overlay.active {
-      display: block;
+    .menu-overlay.active { display: block; }
+
+    @media screen and (max-width: 768px) {
+      .menu-icon { display: flex; }
     }
-    </style>
-<script>
-function toggleMenu() {
-  document.getElementById("overlay").classList.toggle("active");
-  document.getElementById("mainNav").classList.toggle("active");
-}
-</script>
+  </style>
 </head>
 <body>
+
+<!-- Menú hamburguesa -->
 <div class="menu-icon" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
+  <div></div><div></div><div></div>
 </div>
 <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 <nav id="mainNav">
@@ -155,28 +90,24 @@ function toggleMenu() {
   <a href="#clientes" onclick="toggleMenu()">Clientes</a>
   <a href="#contacto" onclick="toggleMenu()">Contacto</a>
 </nav>
-<div class="menu-icon" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<nav id="mainNav">
-  <a href="#slider">Inicio</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#portafolio">Proyectos</a>
-  <a href="#tecnologias">Tecnologías</a>
-  <a href="#clientes">Clientes</a>
-  <a href="#contacto">Contacto</a>
-</nav>
 
-<div class="hero">
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("mainNav");
+  const overlay = document.getElementById("overlay");
+  nav.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+</script>
+
+<div class="hero" id="slider">
   <img src="img/logo_geoit.png" alt="Logo GEOIT" width="100">
   <h1>Transformamos ideas en soluciones tecnológicas</h1>
   <p>Desarrollamos software, mapas inteligentes y sistemas que hacen más eficientes los procesos en tu empresa.</p>
   <a href="#contacto" class="cta-btn">Contáctanos ahora</a>
 </div>
 
-<div class="section">
+<div class="section" id="servicios">
   <h2>¿Por qué elegir GEOIT Systems?</h2>
   <ul>
     <li>🔧 Desarrollo a medida para cada necesidad</li>
@@ -186,29 +117,17 @@ function toggleMenu() {
   </ul>
 </div>
 
-<div class="section">
+<div class="section" id="portafolio">
   <h2>Servicios clave</h2>
   <div class="grid">
-    <div>
-      <h3>Software a Medida</h3>
-      <p>Web, móvil, escritorio, con integración a bases de datos.</p>
-    </div>
-    <div>
-      <h3>Catastro y SIG</h3>
-      <p>Mapas digitales, sensores, drones y geolocalización con resultados precisos.</p>
-    </div>
-    <div>
-      <h3>ERP Empresarial</h3>
-      <p>Gestión de compras, producción, ventas y contabilidad con soluciones escalables.</p>
-    </div>
-    <div>
-      <h3>Soporte Tecnológico</h3>
-      <p>Infraestructura, redes, servidores y seguridad informática.</p>
-    </div>
+    <div><h3>Software a Medida</h3><p>Web, móvil, escritorio, con integración a bases de datos.</p></div>
+    <div><h3>Catastro y SIG</h3><p>Mapas digitales, sensores, drones y geolocalización con resultados precisos.</p></div>
+    <div><h3>ERP Empresarial</h3><p>Gestión de compras, producción, ventas y contabilidad con soluciones escalables.</p></div>
+    <div><h3>Soporte Tecnológico</h3><p>Infraestructura, redes, servidores y seguridad informática.</p></div>
   </div>
 </div>
 
-<div class="section">
+<div class="section" id="tecnologias">
   <h2>Casos de Éxito</h2>
   <ul>
     <li>COOSIV RL – Control de catastro + pagos QR</li>
@@ -219,7 +138,6 @@ function toggleMenu() {
 
 <div class="section" id="contacto">
   <h2>¿Listo para iniciar?</h2>
-  <p>Déjanos tus datos o escríbenos directamente a WhatsApp.</p>
   <form action="https://formsubmit.co/ubaperez@gmail.com" method="POST">
     <input type="text" name="nombre" placeholder="Tu nombre" required>
     <input type="email" name="email" placeholder="Tu correo" required>
